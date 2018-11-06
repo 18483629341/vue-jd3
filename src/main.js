@@ -14,7 +14,7 @@ const router=new VueRouter({
 
 
 Vue.config.productionTip = false
-axios.defaults.baseURL='http://192.168.0.104:3333/';
+axios.defaults.baseURL='http://localhost:3333/';//192.168.0.104
 axios.defaults.headers['Content-Type']='application/x-www-form-urlencoded'
 Vue.prototype.$http=axios;
 /* eslint-disable no-new */

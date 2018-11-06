@@ -3,7 +3,7 @@
         <HomeHeaderView></HomeHeaderView>
         <banner></banner>
         <HomeNavView></HomeNavView>
-        <!--<HomeMainView></HomeMainView>-->
+        <HomeMainView></HomeMainView>
     </div>
 </template>
 
@@ -11,7 +11,7 @@
 import banner from './banner'
 import HomeHeaderView from './HomeHeader';
 import HomeNavView from './HomeNav';
-//import HomeMainView from './HomeMain';
+import HomeMainView from './HomeMain';
 import list from './list'
 export default { 
     data() {
@@ -23,7 +23,7 @@ export default {
        banner,
         HomeHeaderView,
         HomeNavView,
-        //HomeMainView
+        HomeMainView
     }
 }
 </script>
