@@ -30,6 +30,7 @@ Vue.prototype.$http=axios;
 new Vue({
   el: '#app',
   router,
+  store,
   //components: { App },
   //template: '<App/>',
   render:h=>h(App)  //2.0写法

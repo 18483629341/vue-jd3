@@ -46,10 +46,10 @@ const mutations={
 		state.count--;
 	},
 	hideNav:(state)=>{
-		state.shownav=false;
+		state.isShowNav=false;
 	},
 	showNav:(state)=>{
-		state.shownav=true;
+		state.isShowNav=true;
 	}
 };
 const store=new vuex.Store({

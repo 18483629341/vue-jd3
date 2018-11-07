@@ -2,7 +2,7 @@
   <div>
     <h2>test AAAAA</h2>
     <i class="iconfont icon-11"></i>
-    <testB></testB>
+    <testB ></testB>
   </div>
 </template>
 

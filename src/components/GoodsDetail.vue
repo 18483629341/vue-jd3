@@ -87,10 +87,12 @@ export default {
     },
 	mounted() {
 			this.getProDetail(this.$route.params.id);
-            //this.$store.dispatch('hideNav');
+            this.$store.dispatch('hideNav')  //下面导航的隐藏
+            console.log("a",this.$store.state)
 	},
     destroyed() {
-            //this.$store.dispatch('showNav');
+            this.$store.dispatch('showNav');
+            console.log("b",this.$store.state)
     },
 	methods:{
 		goBack(){
@@ -113,7 +115,7 @@ export default {
 					_this.goodsData=data[1];
 
                 }
-				console.log(_this.ProData); 
+				
             },(err)=>{
                 console.log(err);
             })

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
-    <NavBottom />
+    <NavBottom  v-if="$store.state.isShowNav"/>
   </div>
 </template>
 

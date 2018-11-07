@@ -1,6 +1,7 @@
 <template>
     <div>
       category
+      {{$store.state.flag}}
     </div>
 </template>
 

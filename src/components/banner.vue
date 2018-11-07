@@ -11,19 +11,11 @@
 
 <script>
 export default {
-    name:'testB',    //别名
+    name:'banner',    //别名
     props:['data'],
     data() {
         return {
             num:0,      //当前轮播
-           // imgArray:this.props.data,
-           /* [require('../assets/img/banner1.jpg'),
-                    require('../assets/img/banner2.jpg'),
-                    require('../assets/img/banner3.jpg'),
-                    require('../assets/img/banner4.jpg'),
-                    require('../assets/img/banner5.jpg'),]
-            */
-			
         }
     },
     methods:{     //方法
@@ -39,7 +31,7 @@ export default {
     },
     mounted:function(){   //挂载完成   生命周期
         this.play();
-        console.log(this.props.data)
+        
     }
 }
 </script>
