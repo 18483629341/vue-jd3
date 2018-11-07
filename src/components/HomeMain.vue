@@ -39,7 +39,7 @@
                         <div class="share_quality_left not_eng_box">
                             <ul>
                                 <li class="not_eng_item" v-for="item in mainDatas">
-                                    <a  class="not_eng_link">
+                                    <router-link :to="'/detail/'+item.product_id"  class="not_eng_link">
                                         <img v-lazy="item.product_img_url" alt="" class="not_eng_pic lazy-img-fadein">
                                         <div class="not_eng_info">
                                             <p class="not_eng_title">{{item.product_name}}</p>
@@ -48,7 +48,7 @@
                                                 <span class="more_info_price_txt">{{item.product_price}}</span>
                                             </p>
                                         </div>
-                                    </a>
+                                    </router-link>
                                 </li>
                         
                             </ul>

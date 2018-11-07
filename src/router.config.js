@@ -3,7 +3,7 @@ import Category from './components/Category'
 import Find from './components/Find'
 import Cart from './components/Cart'
 import Mine from './components/Mine'
-
+import GoodDetail from '@/components/goodDetail'
 
 export default[{
 	path:"/home",
@@ -26,5 +26,8 @@ export default[{
 },{
 	path:'/mine',
 	component:Mine
+},{
+	path:'/detail/:id',
+	component:GoodDetail
 }
 ]

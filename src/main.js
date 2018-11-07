@@ -4,14 +4,20 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from "./router.config"
 import axios from 'axios'
-
+import VueLazyload from 'vue-lazyload'
 import App from './App'
 //import router from './router'
 Vue.use(VueRouter);//
 const router=new VueRouter({
   routes
 });
-
+Vue.use(VueLazyload,{
+  perLoad:1.3,
+  error:require('./assets/images/err.png'),
+  loading:require('./assets/images/loading.gif'),
+  attempt:3,
+  listenEvents:['scroll']
+})
 
 Vue.config.productionTip = false
 axios.defaults.baseURL='http://localhost:3333/';//192.168.0.104
