@@ -1,10 +1,12 @@
 <template>
     <div class="index-category">
         <div class="category" v-for="v in categorys"><i class="iconfont" v-bind:class="v.icon"></i><label>{{v.title}}</label></div>
+        <testB :data="a"></testB>
   </div>
 </template>
 
 <script>
+import testB from './testB'
 export default {
     //name:'testB',    //别名
     data() {
@@ -14,8 +16,14 @@ export default {
                         {'icon':'icon-11','title':'活动动态'},
                         {'icon':'icon-jiazheng','title':'在线咨询'},
                         {'icon':'icon-jiajujiafang','title':'今日秒杀'},
-                        {'icon':'icon-licai','title':'领取优惠'}]
+                        {'icon':'icon-licai','title':'领取优惠'}],
+            a:"变量a"
+                    
         }
+    },
+    components: {
+        //HelloWorld
+        //testB
     }
 }
 </script>

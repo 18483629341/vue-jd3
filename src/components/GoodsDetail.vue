@@ -8,12 +8,13 @@
         </header>
         <main class="detail_box">
             <section class="banner_box">
-                <ul class="banner_child_box">
+                <Banner :data="goodsImages"/>
+                <!--<ul class="banner_child_box">
                     <li class="banner_item" v-for="(item,i) in goodsImages" v-show="i==num">
                         <img :src="item.image_url" alt="" class="banner_pic">
                     </li>
                 
-                </ul>
+                </ul>-->
                 <div class="banner_count">
                         <em id="slide-nub" class="fz18">{{num+1}}</em>
                         <em class="nub-bg">/</em>
@@ -70,7 +71,10 @@
 </template>
 
 <script>
-	export default {
+//store 不需要引入 
+import Banner from './banner'
+
+export default {
     data() {
         return {
             goodsImages:[],
@@ -78,30 +82,38 @@
             num:0
         }
     },
-		mounted() {
+    components:{
+        Banner
+    },
+	mounted() {
 			this.getProDetail(this.$route.params.id);
-		},
-		methods:{
-			goBack(){
+            //this.$store.dispatch('hideNav');
+	},
+    destroyed() {
+            //this.$store.dispatch('showNav');
+    },
+	methods:{
+		goBack(){
 				    //window.history.go(-1);
 				 this.$router.push('/home');
 				 //this.$router.push({path:'/home'});
-			},
-			getProDetail(id){
+		},
+		getProDetail(id){
              let _this = this;
             _this.$http.get('/detail',{params:{mId:id}}).then((res)=>{
                 console.log(res);
-								if(res.status==200){
-									let data=res.data;
-									 _this.goodsImages=data[0];
-									 _this.goodsData=data[1];
-									 /*_this.ProData.product_id=data[1].product_id;
-                   _this.ProData.product_name=data[1].product_name;
-									 _this.ProData.product_img_url=data[1].product_img_url;
-									 _this.ProData.product_detail=data[1].product_detail;
-									 _this.ProData.product_uprice=data[1].product_uprice;*/
-								}  
-								 console.log(_this.ProData); 
+				if(res.status==200){
+					let data=res.data;
+                    let array=[];
+                    data[0].map(function(i){
+                        array.push(i['image_url']);
+                    })
+					_this.goodsImages=array;
+
+					_this.goodsData=data[1];
+
+                }
+				console.log(_this.ProData); 
             },(err)=>{
                 console.log(err);
             })

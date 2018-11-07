@@ -5,8 +5,11 @@ import VueRouter from 'vue-router'
 import routes from "./router.config"
 import axios from 'axios'
 import VueLazyload from 'vue-lazyload'
+import store from './store/index'
 import App from './App'
 //import router from './router'
+import './assets/font/iconfont'
+import './assets/css/base.css'
 Vue.use(VueRouter);//
 const router=new VueRouter({
   routes

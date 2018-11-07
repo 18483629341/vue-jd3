@@ -19,6 +19,10 @@ export default {
         return {
             
         }
+    },
+    methods:{
+       goSearch(e){
+       }
     }
 }
 </script>

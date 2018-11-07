@@ -1,4 +1,6 @@
 .fixBottomBox{
+	min-width: 300px;
+	max-width: 640px;
 	position:fixed;
 	bottom:-1px;
 	width:100%;

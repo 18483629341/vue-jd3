@@ -1,9 +1,9 @@
 <template>
     <div class="banner">
-        <img v-for="(v,i) in imgArray" v-show="i==num" :src="v"/>
+        <img v-for="(v,i) in data" v-show="i==num" :src="v"/>
         <div class="banner-circle">
             <ul>
-                <li v-for="(v,i) in imgArray" :class="{selected:i==num}"></li>  
+                <li v-for="(v,i) in data" :class="{selected:i==num}"></li>  
             </ul> 
         </div>
     </div>
@@ -12,20 +12,24 @@
 <script>
 export default {
     name:'testB',    //别名
+    props:['data'],
     data() {
         return {
             num:0,      //当前轮播
-            imgArray:[require('../assets/img/banner1.jpg'),
+           // imgArray:this.props.data,
+           /* [require('../assets/img/banner1.jpg'),
                     require('../assets/img/banner2.jpg'),
                     require('../assets/img/banner3.jpg'),
                     require('../assets/img/banner4.jpg'),
-                    require('../assets/img/banner5.jpg'),],
+                    require('../assets/img/banner5.jpg'),]
+            */
+			
         }
     },
     methods:{     //方法
         autoPlay:function(){
             this.num ++;
-            if(this.num == this.imgArray.length){   //已经是最后一张
+            if(this.num == this.data.length){   //已经是最后一张
                 this.num = 0;
             }
         },
@@ -35,6 +39,7 @@ export default {
     },
     mounted:function(){   //挂载完成   生命周期
         this.play();
+        console.log(this.props.data)
     }
 }
 </script>

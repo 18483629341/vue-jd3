@@ -3,18 +3,18 @@
 		<div class="h_layout">
 	    	<div class="search_ma">
                 <header class="top_bar">
-                        <a onclick="window.history.go(-1)" class="icon_back"></a>
+                        <a onclick="window.history.go(-1)" class="icon icon_back"></a>
                         <form  class="goods_search">
-                            <input type="saerch" class="goods_search_content" placeholder="搜索" v-model="keyword" @input="goSearch()">
-                            <!-- <input type="saerch" class="goods_search_content" placeholder="搜索" v-model="keyword" @keyup.enter="goSearch($event)"> -->
+                            <input type="search" class="goods_search_content" placeholder="搜索" v-model="keyword" @input="goSearch()">
+                            <!-- <input type="search" class="goods_search_content" placeholder="搜索" v-model="keyword" @keyup.enter="goSearch($event)"> -->
                         </form>
-                        <a href="#" class="icon_menu"></a>
+                        <a href="#" class="icon icon_menu"></a>
                     </header>
                     <section class="search_condition">
                         <ul>
                             <li>
                                 <span class="all">全部</span>
-                                <em class="all_icon"></em>
+                                <em class="icon all_icon"></em>
                             </li>
                             <li>
                                 <span @click="goSearch('hot')">销量</span>
@@ -22,8 +22,8 @@
                             </li>
                             <li class="p_price">
                                 <span>价格</span>
-                                <em class="price_up" @click="getByPriceUp()"></em>
-                                <em class="price_down" @click="getByPriceDown()"></em>
+                                <em class="icon price_up" @click="getByPriceUp()"></em>
+                                <em class="icon price_down" @click="getByPriceDown()"></em>
                             </li>
                             <li>
                                 <span>筛选</span>
@@ -98,6 +98,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 	@import '../assets/css/searchpage.css'
 </style>
