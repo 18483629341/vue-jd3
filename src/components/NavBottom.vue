@@ -2,7 +2,7 @@
   <div class="footer">
   	<footer class="fixBottomBox"> 
         <ul>
-            <router-link tag="li" to="/home" class="tabItem">
+            <router-link tag="li" to="/home" class="tabItem" >
             	<a href="javascript:;" class="tab-item-link">
                     <img src="../assets/images/a-home.png" alt="" class="tab-item-icon">
                 </a>
@@ -31,3 +31,16 @@
     </footer>
   </div>
 </template>
+<script>
+    export default {
+        data(){
+            return{
+
+            }
+        },
+    }
+</script>
+
+<style >
+   	@import '../assets/css/navBottom.css'
+</style>

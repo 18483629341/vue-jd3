@@ -3,31 +3,34 @@ import Category from './components/Category'
 import Find from './components/Find'
 import Cart from './components/Cart'
 import Mine from './components/Mine'
-import GoodDetail from '@/components/goodDetail'
+import GoodsDetail from './components/GoodsDetail'  //详情
+import SearchMain from './components/SearchMain'   //搜索
 
 export default[{
-	path:"/home",
-	component:Home
+    path:'/home',
+    component:Home
 },{
-	path: '/',
-	redirect: '/home'
+    path: '/',
+    redirect: '/home'
 }, {
-	path: '*',
-	redirect: '/home'
+    path: '*',
+    redirect: '/home'
 },{
-	path:"/category",
-	component:Category
+    path:'/catgory',
+    component:Category
 },{
-	path:'/find',
-	component:Find
+    path:'/find',
+    component:Find
 },{
-	path:'/cart',
-	component:Cart
+    path:'/cart',
+    component:Cart
 },{
-	path:'/mine',
-	component:Mine
+    path:'/mine',
+    component:Mine
 },{
-	path:'/detail/:id',
-	component:GoodDetail
-}
-]
+    path:'/detail/:id',
+    component:GoodsDetail
+},{
+    path:'/search',
+    component:SearchMain
+}]
