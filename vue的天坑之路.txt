@@ -68,6 +68,10 @@
                                         watch:{$route(to){//监听不建议大量使用
 			console.log(to)
 	                        }} 
+      坑5 懒加载出现问题：
+	1.入口文件没有引入vuelazyload
+                2.在点击catgory页面中的内容，点击不同的lrouter-link引起页面内改变，需要在link上面
+           加key属性
 
 
       

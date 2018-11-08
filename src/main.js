@@ -23,7 +23,7 @@ Vue.use(VueLazyload,{
 })
 
 Vue.config.productionTip = false
-axios.defaults.baseURL='http://192.168.100.159:3333/';//192.168.0.104
+axios.defaults.baseURL='http://192.168.100.159:3333/';//本电脑的IP地址
 axios.defaults.headers['Content-Type']='application/x-www-form-urlencoded'
 Vue.prototype.$http=axios;
 /* eslint-disable no-new */
