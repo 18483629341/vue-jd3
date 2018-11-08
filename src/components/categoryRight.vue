@@ -33,19 +33,19 @@ export default {
 		mounted() {
 			console.log("挂载一次")
 			if(this.$route.params.id){
-				this.getDatas(this.$route.params.id);
+				this.getRDatas(this.$route.params.id);
 		  }
 		
 		},
 		updated() {   //不管用
-			console.log("更新中")
-				
+			console.log("更新中");
 		},
 		watch:{
         $route(to){
-					console.log(to)
-					if(this.$route.params.id){
-						this.getDatas(this.$route.params.id);
+					console.log(to.path)
+					var reg=/catgory\/\d+/;
+					if(reg.test(to.path)){
+						this.getRDatas(this.$route.params.id);
 		  		}
 				}
 		},
@@ -53,7 +53,7 @@ export default {
 			console.log("销毁一次")
 		},
    methods:{
-		 getDatas(id){
+		 getRDatas(id){
 			 this.$http.get('/categorygoods',{
 				 params:{mId:id}
 			 }).then((res)=>{
