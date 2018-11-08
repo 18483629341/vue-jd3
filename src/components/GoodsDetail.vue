@@ -133,4 +133,7 @@ export default {
 		}
 	}
 </script>
+<style>
+@import '../assets/css/detail.css';
+</style>
 

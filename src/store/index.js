@@ -19,7 +19,7 @@ var getters={
 //管理mutations
 const actions={
 	abc:({commit,state})=>{
-    commit('abc')
+    commit('abc')//触发mutations中的abc方法
 	},
 	add:({commit,state})=>{
     commit('add')
