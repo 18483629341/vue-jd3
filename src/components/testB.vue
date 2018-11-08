@@ -11,7 +11,7 @@
 <script>
 export default {
     name:'testB',    //别名
-    props:['data'],
+    props:['data','num'],
     data() {
         return {
             lists:[1,2,3,4,5]

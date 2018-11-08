@@ -50,3 +50,6 @@
 	.icon{
    	 	background-image: url('./images/sprites.png');
 	}
+      store的引用 只在入口js中 import 后，
+       在组建中引用$store
+     
