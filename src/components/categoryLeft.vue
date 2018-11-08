@@ -30,7 +30,7 @@ export default {
 				 
 				this.$http.get('/category').then((res)=>{
 					if(res.status==200){
-						this.leftDatas=res.data;
+						this.leftDatas=res.data.reverse();
 						for(let i=0;i<this.leftDatas.length;i++){
 							this.$set(this.leftDatas[i],'flag',false)
 						}

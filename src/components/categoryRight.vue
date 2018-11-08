@@ -40,7 +40,7 @@ export default {
 		updated() {   //不管用
 			console.log("更新中");
 		},
-		watch:{
+		watch:{//监听不建议大量使用
         $route(to){
 					console.log(to.path)
 					var reg=/catgory\/\d+/;

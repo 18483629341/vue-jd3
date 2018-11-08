@@ -58,9 +58,10 @@
              router的 实例 this.$route.params.id   才能拿到
               this.$route.params.id 
      坑4  在catgory页面  中左边的列表虽然变化，引起路由变化，但是不能组件一直都没有变化
-              那么如何通过路由的变化发起请求呢？watch:{$route(to){
-					console.log(to)
-				}} 
+              那么右边组件 如何通过路由的变化发起请求呢？
+                                        watch:{$route(to){//监听不建议大量使用
+			console.log(to)
+	                        }} 
 
       
     
