@@ -18,6 +18,10 @@ export default[{
 },{
     path:'/catgory',
     component:Category
+},
+{
+    path:'/catgory/:id',
+    component:Category
 },{
     path:'/find',
     component:Find

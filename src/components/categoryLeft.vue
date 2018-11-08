@@ -2,9 +2,9 @@
 	<div id="cate_left">
 		 <div class="category_left">
 	            <ul class="childbox">
-	                <li :class="{active:item.flag}" v-for="(item,i) in leftDatas" @click="change(item,i)">
+	                <li :class="{active:item.flag}" v-for="(item,i) in leftDatas"  @click="lichange(item,i)">
 	                	<router-link :to="'/catgory/'+item.category_id">
-	                	{{item.category_name}}
+	                		{{item.category_name}}
 	                	</router-link>
 	                </li>
 	               
@@ -17,7 +17,8 @@
 export default {
     data() {
         return {
-           leftDatas:[]
+           leftDatas:[],
+					 active:"active"
         }
     },
     mounted() {
@@ -26,34 +27,33 @@ export default {
 		methods:{
 			
 			getcategdoryLists(){
-				 let _this=this;
-				 _this.$http.get('/category').then((res)=>{
+				 
+				this.$http.get('/category').then((res)=>{
 					if(res.status==200){
-						_this.leftDatas=res.data;  
+						this.leftDatas=res.data;
+						for(let i=0;i<this.leftDatas.length;i++){
+							this.$set(this.leftDatas[i],'flag',false)
+						}
+						console.log(this.leftDatas);
          	}
      		},(err)=>{
                 console.log(err);
-        })
-			}
+        }
+			)
+			
 		},
-		change(item,i){
-			this.leftDatas.map(function(item){
-				item.flag=false;
-			});
-			this.leftDatas[i].flag=true;
-			let _this=this;
-			_this.$http.get('/categorygoods',{
-					params:{
-					 	mId:item.category_id
-				 	}
-				}).then((res)=>{
-               console.log(res);  
-					if(res.status==200){
-						let data=res.data; 	 
-         	}
-     		},(err)=>{
-                console.log(err);
-        })
+		lichange(item,j){
+
+				for(let i=0;i<this.leftDatas.length;i++){
+						if(i==j){
+							this.$set(this.leftDatas[i],'flag',true)
+						}else{
+							this.$set(this.leftDatas[i],'flag',false)
+						}
+					}
+				
+			
+			}
 		}
 			
 	

@@ -50,6 +50,13 @@
 	.icon{
    	 	background-image: url('./images/sprites.png');
 	}
-      store的引用 只在入口js中 import 后，
-       在组建中引用$store
-     
+   坑 1.  store的引用 只在入口js中 import 后，
+           需要在组建中引用$store 
+    坑 2.vue对象中的对象直接赋值，是不会被obeserve；
+           需要用this.$set(a,'name',lisa)才会被obeserve；
+    坑3 路由参数           this.$router.params.id  拿不到
+             router的 实例 this.$route.params.id   才能拿到
+              this.$route.params.id 
+
+      
+    
