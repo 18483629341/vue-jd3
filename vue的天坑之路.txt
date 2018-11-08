@@ -50,6 +50,12 @@
 	.icon{
    	 	background-image: url('./images/sprites.png');
 	}
+  坑 0 在移动端访问
+         修改package.json中  引入
+	"scripts": {
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js --open --hot --host 0.0.0.0",
+         然后用电脑的IP的地址 ：如http://192.168.100.159:8080访问，没有出来
+          需要重启服务器，npm run dev ,再刷新一下页面
    坑 1.  store的引用 只在入口js中 import 后，
            需要在组建中引用$store 
     坑 2.vue对象中的对象直接赋值，是不会被obeserve；
@@ -62,6 +68,7 @@
                                         watch:{$route(to){//监听不建议大量使用
 			console.log(to)
 	                        }} 
+
 
       
     
