@@ -12,12 +12,14 @@
       </p>
        <!--执行多个mutations 需要action来进行管理-->
          <button @click="$store.dispatch('abc')" >dispatch->commit->mutations</button>
-      
+       <p>{{$store.state.count}}</p>
+        <button @click="$store.dispatch('add')" >add</button>
     </div>
 </template>
 
 <script>
 import TestB from "./testB" 
+import {mapGetters} from 'vuex' 
 export default {
     data() {
         return {
@@ -26,6 +28,7 @@ export default {
     },
     components:{
         TestB
-    }
+    },
+   computed:mapGetters(['count'])
 }
 </script>

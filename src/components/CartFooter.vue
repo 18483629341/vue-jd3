@@ -1,5 +1,5 @@
 <template>
-	<div class="cart_fo">
+	<!--<div class="cart_fo">
 		<footer class="cart_footer">
 		    <div class="all_check_box">
 		        <div class="check_box">
@@ -26,13 +26,13 @@
 		            </a>
 		    </div>
 		</footer>
-	</div>
+	</div>-->
 </template>
 <script>
-import {mapGetters} from 'vuex'
+//import {mapGetters} from 'vuex'
 export default {
 	
-	computed:mapGetters(['total']),
+	//computed:mapGetters(['total']),
 	
 }
 </script>

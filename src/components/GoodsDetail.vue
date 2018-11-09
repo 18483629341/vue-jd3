@@ -96,8 +96,8 @@ export default {
     },
 	methods:{
 		goBack(){
-				    //window.history.go(-1);
-				 this.$router.push('/home');
+				//window.history.go(-1);
+				this.$router.push('/home');
 				 //this.$router.push({path:'/home'});
 		},
 		getProDetail(id){
@@ -134,6 +134,8 @@ export default {
             //深拷贝 var cartData=this.goodsData[0];
             var cartData=null;
             cartData=JSON.parse(JSON.stringify(this.goodsData[0]));
+            cartData.goods_num=1;
+             console.log(cartData);
             this.$store.dispatch('cartAdd',cartData);
             this.$router.push('/cart');
 

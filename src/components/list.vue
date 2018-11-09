@@ -17,8 +17,7 @@ export default {
                         {'icon':'icon-jiazheng','title':'在线咨询'},
                         {'icon':'icon-jiajujiafang','title':'今日秒杀'},
                         {'icon':'icon-licai','title':'领取优惠'}],
-            a:"变量a"
-                    
+            a:"变量a"         
         }
     },
     components: {

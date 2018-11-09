@@ -6,7 +6,7 @@ const state={
 	flag:"flag",
 	count:"1",
 	isShowNav:true,
-	cartDatas:[{price:169.12,num:3,isBuy:true},{price:195.00,num:2,isBuy:true}]
+	addCartDatas:[]
 }
 //计算属性
 var getters={
@@ -15,6 +15,9 @@ var getters={
 	},
 	shownav(state){
 		return state.isShowNav
+	},
+	cartDatas(state){
+       return state.addCartDatas
 	}
 };
 //管理mutations
@@ -37,12 +40,7 @@ const actions={
 	cartAdd:({commit,state},data)=>{
 		commit('cartAdd',data)
 	},
-	numAdd:({commit,state},i)=>{
-		commit('numAdd',i)
-	},
-	numMunis:({commit,state},i)=>{
-		commit('numMunis',i)
-	}
+	
 }
 //改变状态
 const mutations={
@@ -62,14 +60,9 @@ const mutations={
 		state.isShowNav=true;
 	},
 	cartAdd:(state,data)=>{
-		state.cartDatas.push(data);
+		state.addCartDatas.push(data);
 	},
-	numAdd:(state,i)=>{
-		state.cartDatas[i].num++;
-	},
-	numMunis:(state,i)=>{
-		state.cartDatas[i].num--;
-	}
+	
 };
 const store=new vuex.Store({
 	state,

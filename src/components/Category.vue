@@ -18,6 +18,7 @@ export default {
         CategoryHead,
         CategoryMain
     }
+    
 }
 </script>
 <style> 

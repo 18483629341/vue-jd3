@@ -57,7 +57,7 @@
 		      
 		    </div>
 
-		    <div class="pop" v-show="popStatus">
+		    <!--<div class="pop" v-show="popStatus">
 		    <div class="pop_box">
 		        <div class="del_info">
 		            确定要删除该商品吗？ 
@@ -68,45 +68,47 @@
 		        <div class="del_ok" @click="delOk">
 		            确定
 		        </div>
-		    </div>
+		    </div>-->
 		</div>
 
 		</main>
 </template>
 
 <script>
+import {mapGetters,mapActions} from 'vuex'
 
 export default {
     data() {
         return {
-					  cartDatas:this.$store.cartDatas,
+			//cartDatas:[],
             data:[],
             total:0
         }
     },
     mounted() {
-        this.computeTotal();
+        this.$store.dispatch('hideNav');
     },
+	destroyed() {
+		this.$store.dispatch('showNav');
+	},
     methods:{
-        numMunis(i){
-            this.$store.dispatch("numMunis",i);
-            this.computeTotal();
-        },
-        numAdd(i){
-					this.$store.dispatch("numAdd",i);
-          this.computeTotal();
-        },
-        computeTotal(){
-            var _this=this;
-            var data=_this.$store.state.cartDatas;
-            data.map(function(item){
-                if(item.isBuy==true){
-                    let perTotal=item.price*item.num;
-										_this.total=parseFloat(_this.total)+parseFloat(perTotal);
-                     _this.total=_this.total.toFixed(2);
-                }
-            })
-        }
-    }
+		goodIncrement(){
+
+		},
+		goodDecrement(){
+
+		},
+		showPop(){
+
+		},
+		delCancel(){
+
+		},
+		delOk(){
+
+		}
+	},   
+	computed:mapGetters(['cartDatas'])
+    
 }
 </script>
