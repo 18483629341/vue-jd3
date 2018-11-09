@@ -57,7 +57,7 @@
 		      
 		    </div>
 
-		    <!--<div class="pop" v-show="popStatus">
+		    <div class="pop" v-show="popStatus">
 		    <div class="pop_box">
 		        <div class="del_info">
 		            确定要删除该商品吗？ 
@@ -68,7 +68,7 @@
 		        <div class="del_ok" @click="delOk">
 		            确定
 		        </div>
-		    </div>-->
+		    </div>
 		</div>
 
 		</main>
@@ -80,9 +80,8 @@ import {mapGetters,mapActions} from 'vuex'
 export default {
     data() {
         return {
-			//cartDatas:[],
-            data:[],
-            total:0
+            popStatus:false,
+			curId:0
         }
     },
     mounted() {
@@ -92,23 +91,22 @@ export default {
 		this.$store.dispatch('showNav');
 	},
     methods:{
-		goodIncrement(){
-
-		},
-		goodDecrement(){
-
-		},
-		showPop(){
-
+		...mapActions(['goodIncrement','goodDecrement']),
+		
+		showPop(id){
+           this.popStatus=true;
+		   this.curId=id;
 		},
 		delCancel(){
-
+			this.popStatus=false;
 		},
 		delOk(){
-
+			this.$store.dispatch('delCart',this.curId);
+			this.popStatus=false;
+             
 		}
 	},   
-	computed:mapGetters(['cartDatas'])
+	computed:mapGetters(['cartDatas'])//返回有关于 一个名为cartDatas的值
     
 }
 </script>

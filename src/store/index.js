@@ -40,6 +40,15 @@ const actions={
 	cartAdd:({commit,state},data)=>{
 		commit('cartAdd',data)
 	},
+	delCart:({commit,state},id)=>{
+		commit('delCart',id)
+	},
+	goodIncrement:({commit,state},id)=>{
+		commit('goodIncrement',id)
+	},
+	goodDecrement:({commit,state},id)=>{
+		commit('goodDecrement',id)
+	},
 	
 }
 //改变状态
@@ -59,9 +68,41 @@ const mutations={
 	showNav:(state)=>{
 		state.isShowNav=true;
 	},
-	cartAdd:(state,data)=>{
-		state.addCartDatas.push(data);
+	//添加数量
+	goodIncrement:(state,id)=>{
+	    state.addCartDatas.filter(function(item){return item.product_id==id})[0].goods_num++;
 	},
+	goodDecrement:(state,id)=>{
+		var decObject=state.addCartDatas.filter(function(item){return item.product_id==id;})[0];
+		if(decObject&&decObject.goods_num>1){
+		   state.addCartDatas.filter(function(item){return item.product_id==id;})[0].goods_num--;
+		}else{
+			return
+		}
+		
+	},
+	cartAdd:(state,data)=>{
+		if(state.addCartDatas.length>0){
+            var item=state.addCartDatas.filter(function(item){
+				return item.product_id==data.product_id;
+			})[0];
+			console.log(item)
+			if(item){
+				item.goods_num=item.goods_num+data.goods_num;
+			}else{
+				state.addCartDatas.push(data);
+			}
+		}else{
+			state.addCartDatas.push(data);
+		}
+	},
+	delCart:(state,id)=>{
+		var newData=state.addCartDatas.filter(function(item){
+			return item.product_id!==id
+		});
+		state.addCartDatas=newData;
+	},
+	
 	
 };
 const store=new vuex.Store({
