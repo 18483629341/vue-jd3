@@ -75,7 +75,22 @@
      坑6 将vue的对象的数据copy    cartData=this.goodsData[0];   xxx 
                应该要使用  深拷贝    cartData=JSON.parse(JSON.stringfy(object))  ;
                                               cartData=JSON.parse(JSON.stringfy(this.goodsData[0]));
-
+    坑7  import {mapGetters,mapActions} from 'vuex'
+          computed:mapGetters(['cartDatas']) //返回有关于 一个名为cartDatas的值
+          data中不要再定义cartDatas
+          ...mapActions(['goodIncrement','goodDecrement']) //遍历数组中的房返回到methods中
+   得1  filter（）
+        删除与Id 匹配的data的对象
+          	var newData=state.addCartDatas.filter(function(item){
+			return item.product_id!==id
+		});
+		state.addCartDatas=newData;
+     
+    得2 reduce()计算数组元素相加后的总和
+               //累加器  money计算返回值   item当前元素  0传递给函数的初始值
+	return state.addCartDatas.reduce(function(sum,item){
+			return  sum+item.product_uprice*item.goods_num
+		},0)
       
 
 

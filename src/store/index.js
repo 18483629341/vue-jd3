@@ -6,7 +6,8 @@ const state={
 	flag:"flag",
 	count:"1",
 	isShowNav:true,
-	addCartDatas:[]
+	addCartDatas:[],
+	total:0
 }
 //计算属性
 var getters={
@@ -18,6 +19,9 @@ var getters={
 	},
 	cartDatas(state){
        return state.addCartDatas
+	},
+	total(state){
+		return state.total;
 	}
 };
 //管理mutations
@@ -49,7 +53,9 @@ const actions={
 	goodDecrement:({commit,state},id)=>{
 		commit('goodDecrement',id)
 	},
-	
+	reduce:({commit,state})=>{
+		commit('reduce')
+	},
 }
 //改变状态
 const mutations={
@@ -101,6 +107,14 @@ const mutations={
 			return item.product_id!==id
 		});
 		state.addCartDatas=newData;
+	},
+	reduce:(state)=>{
+		//reduce()计算数组元素相加后的总和
+        //累加器  money计算返回值   item当前元素  0传递给函数的初始值
+		return state.addCartDatas.reduce(function(sum,item){
+			return  sum+item.product_uprice*item.goods_num
+		},0)
+		
 	},
 	
 	

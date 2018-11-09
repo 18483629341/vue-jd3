@@ -1,8 +1,8 @@
 <template>
-	<!--<div class="cart_fo">
+	<div class="cart_fo">
 		<footer class="cart_footer">
 		    <div class="all_check_box">
-		        <div class="check_box">
+		        <div class="check_box" @click="isCheck()">
 
 		        </div>
 		        <span>全选</span>
@@ -26,13 +26,29 @@
 		            </a>
 		    </div>
 		</footer>
-	</div>-->
+	</div>
 </template>
 <script>
-//import {mapGetters} from 'vuex'
+import {mapGetters} from 'vuex'
 export default {
-	
-	//computed:mapGetters(['total']),
+	data(){
+		return {
+			checkAll:false
+		}
+	},
+	mounted() {
+		
+	},
+	methods:{
+		isCheck(){
+			console.log(1);
+			this.checkAll=!this.checkAll;
+			if(this.checkAll){
+				//this.$store.dispatch('reduce');
+			}
+		}
+	},
+	computed:mapGetters(['total']),
 	
 }
 </script>
