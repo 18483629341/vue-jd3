@@ -72,6 +72,11 @@
 	1.入口文件没有引入vuelazyload
                 2.在点击catgory页面中的内容，点击不同的lrouter-link引起页面内改变，需要在link上面
            加key属性
+     坑6 将vue的对象的数据copy    cartData=this.goodsData[0];   xxx 
+               应该要使用  深拷贝    cartData=JSON.parse(JSON.stringfy(object))  ;
+                                              cartData=JSON.parse(JSON.stringfy(this.goodsData[0]));
+
+      
 
 
       

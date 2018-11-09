@@ -127,11 +127,19 @@ export default {
                 this.num = 0;
             }
         },
-				play:function(){
+		play:function(){
             setInterval(this.autoPlay,2000)
+        },
+        addToCart(){
+            //深拷贝 var cartData=this.goodsData[0];
+            var cartData=null;
+            cartData=JSON.parse(JSON.stringify(this.goodsData[0]));
+            this.$store.dispatch('cartAdd',cartData);
+            this.$router.push('/cart');
+
         }
-		}
 	}
+}
 </script>
 <style>
 @import '../assets/css/detail.css';
