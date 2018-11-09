@@ -88,11 +88,10 @@ export default {
 	mounted() {
 			this.getProDetail(this.$route.params.id);
             this.$store.dispatch('hideNav')  //下面导航的隐藏
-            console.log("a",this.$store.state)
+           
 	},
     destroyed() {
             this.$store.dispatch('showNav');
-            console.log("b",this.$store.state)
     },
 	methods:{
 		goBack(){

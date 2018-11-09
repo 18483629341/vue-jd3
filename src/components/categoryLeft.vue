@@ -24,9 +24,9 @@ export default {
     mounted() {
 			this.getcategdoryLists();
 		},
-		methods:{
+	methods:{
 			
-			getcategdoryLists(){
+		getcategdoryLists(){
 				 
 				this.$http.get('/category').then((res)=>{
 					if(res.status==200){
@@ -35,14 +35,14 @@ export default {
 							this.$set(this.leftDatas[i],'flag',false)
 						}
 						console.log(this.leftDatas);
-         	}
-     		},(err)=>{
+        	}
+     	},(err)=>{
                 console.log(err);
         }
 			)
 			
-		},
-		lichange(item,j){
+	},
+	lichange(item,j){
 
 				for(let i=0;i<this.leftDatas.length;i++){
 						if(i==j){
@@ -54,7 +54,7 @@ export default {
 				
 			
 			}
-		}
+	}
 			
 	
 }

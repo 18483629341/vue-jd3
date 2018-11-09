@@ -84,11 +84,15 @@ export default {
 			curId:0
         }
     },
+	computed:mapGetters(['cartDatas']),//返回有关于 一个名为cartDatas的值
     mounted() {
         this.$store.dispatch('hideNav');
     },
 	destroyed() {
 		this.$store.dispatch('showNav');
+	},
+	watch:{
+       
 	},
     methods:{
 		...mapActions(['goodIncrement','goodDecrement']),
@@ -106,7 +110,7 @@ export default {
              
 		}
 	},   
-	computed:mapGetters(['cartDatas'])//返回有关于 一个名为cartDatas的值
+	
     
 }
 </script>

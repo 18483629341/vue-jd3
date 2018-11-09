@@ -21,7 +21,11 @@ var getters={
        return state.addCartDatas
 	},
 	total(state){
-		return state.total;
+		//reduce()计算数组元素相加后的总和
+        //累加器  money计算返回值   item当前元素  0传递给函数的初始值
+		return  state.total=state.addCartDatas.reduce(function(sum,item){
+			return  sum+item.product_uprice*item.goods_num
+		},0)
 	}
 };
 //管理mutations
@@ -48,14 +52,12 @@ const actions={
 		commit('delCart',id)
 	},
 	goodIncrement:({commit,state},id)=>{
-		commit('goodIncrement',id)
+		commit('goodIncrement',id);
 	},
 	goodDecrement:({commit,state},id)=>{
 		commit('goodDecrement',id)
-	},
-	reduce:({commit,state})=>{
-		commit('reduce')
-	},
+	}
+	
 }
 //改变状态
 const mutations={
@@ -76,7 +78,8 @@ const mutations={
 	},
 	//添加数量
 	goodIncrement:(state,id)=>{
-	    state.addCartDatas.filter(function(item){return item.product_id==id})[0].goods_num++;
+		state.addCartDatas.filter(function(item){return item.product_id==id})[0].goods_num++;
+		
 	},
 	goodDecrement:(state,id)=>{
 		var decObject=state.addCartDatas.filter(function(item){return item.product_id==id;})[0];
@@ -107,16 +110,7 @@ const mutations={
 			return item.product_id!==id
 		});
 		state.addCartDatas=newData;
-	},
-	reduce:(state)=>{
-		//reduce()计算数组元素相加后的总和
-        //累加器  money计算返回值   item当前元素  0传递给函数的初始值
-		return state.addCartDatas.reduce(function(sum,item){
-			return  sum+item.product_uprice*item.goods_num
-		},0)
-		
-	},
-	
+	}
 	
 };
 const store=new vuex.Store({

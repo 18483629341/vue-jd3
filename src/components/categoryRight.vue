@@ -41,13 +41,13 @@ export default {
 			console.log("更新中");
 		},
 		watch:{//监听不建议大量使用
-        $route(to){
+        	$route(to){
 					console.log(to.path)
 					var reg=/catgory\/\d+/;
 					if(reg.test(to.path)){
 						this.getRDatas(this.$route.params.id);
 		  		}
-				}
+			}
 		},
 		destroyed() {
 			console.log("销毁一次")
