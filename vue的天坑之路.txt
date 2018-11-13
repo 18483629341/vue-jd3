@@ -91,8 +91,16 @@
 	return state.addCartDatas.reduce(function(sum,item){
 			return  sum+item.product_uprice*item.goods_num
 		},0)
+    坑8  所有在前后台交互都会遇到的问题
+            前台传后台的是对象，到后台就编程  字符串JSON.stringify(obj)
+           后台穿前台的是字符串，需要 用JSON.parse(string)
       
-
+    得9： 用vue打包
+                npm run build 生成dist 文件，里面生成静态文件；
+                测试打包文件是否正常，开启一个服务  npm install -g serve  全局安装
+                 serve dist
+                http://localhost:5000/#/home
+             
 
       
     
