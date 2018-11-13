@@ -1,23 +1,36 @@
 <template>
     <div>
       <!-- <list></list>-->
-      <main v-if="isLogined"></main>
-      <Login v-if="!isLogined"></Login>
+      <MineHeader></MineHeader>
+      <MineMain></MineMain>
     </div>
 </template>
 
 <script>
 import list from './list'
-import Login from './Login'
+import MineHeader from './MineHeader'
+import MineMain from './MineMain'
 export default {
     data() {
         return {
-            isLogined:false 
+            isLogined:false
         }
+    },
+    beforeCreate() {
+        
+    },
+    mounted() {
+        window.sessionStorage.clear();
+      
     },
     components: {
         list,
-        Login
+        MineHeader,
+        MineMain
+     
     }
 }
 </script>
+<style >
+    @import '../assets/css/mine.css';
+</style>

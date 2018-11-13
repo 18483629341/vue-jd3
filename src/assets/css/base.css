@@ -141,3 +141,9 @@ textarea {
     width: 100%;
     height: auto;
 }
+.successBlock{
+    color:green;
+}
+.helpBlock{
+    color: RED;
+}
