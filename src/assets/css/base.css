@@ -43,7 +43,7 @@ textarea {
 }
 
 [class^='icon'] {
-    background: url("../images/sprites.png") no-repeat;
+    background: url("./../images/sprites.png") no-repeat;
     background-size: 200px 200px;
 }
 
