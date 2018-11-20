@@ -110,7 +110,7 @@ export default {
                         array.push(i['image_url']);
                     })
 					_this.goodsImages=array;
-
+                     console.log(_this.goodsImages);
 					_this.goodsData=data[1];
 
                 }

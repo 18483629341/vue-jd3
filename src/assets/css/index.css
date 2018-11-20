@@ -21,11 +21,13 @@ body {
 
 .m_header .m_header_box {
     position: relative;
-    min-width: 300px;
-    max-width: 640px;
+   
     height: 40px;
     margin: 0 auto;
-    background: rgba(201, 21, 35, 0);
+    background: -webkit-linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
+    background: -o-linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0)); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0)); /* Firefox 3.6 - 15 */
+    background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0)); /* 标准的语法 */
 }
 
 .m_header_box .icon_logo {

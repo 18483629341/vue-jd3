@@ -31,6 +31,7 @@ export default {
     },
     mounted:function(){   //挂载完成   生命周期
         this.play();
+
         
     }
 }
@@ -46,11 +47,7 @@ body {
     overflow-y:scroll;
     overflow-x:hidden;
 }
-html,body {
-    max-width:720px;
-    height:100%;
-    margin:0 auto;
-}
+
 
 /*index*/
 .banner {

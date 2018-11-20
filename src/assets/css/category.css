@@ -7,6 +7,7 @@ body {
 
 .caregoty_head .top_bar {
     position: fixed;
+    max-width: 720px;
 }
 
 .category_content {

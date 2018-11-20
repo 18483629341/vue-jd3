@@ -1,6 +1,6 @@
 <template>
-	<div class="home_m">
-		 <main class="m_product">
+	<main class="home_m">
+		 <div class="m_product">
                 <section class="product_box">
                     <div class="product_top">
                         <a href="#" class="product_left">
@@ -55,8 +55,8 @@
                         </div>
                     </div>
                 </div>
-            </main>
-	</div>
+            </div>
+	</main>
 </template>
 
 <script>

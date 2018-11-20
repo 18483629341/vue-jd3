@@ -4,6 +4,7 @@ body {
 
 #carttp .top_bar {
     position: static;
+    left: 0;
 }
 
 .cart_box {
