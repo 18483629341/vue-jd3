@@ -1,6 +1,6 @@
-const url = '../../../../server/nvm/versions/node/v8.9.4/lib/node_modules/';
-var express = require(url + 'express');
-//const express = require('express');
+//const url = '../../../../server/nvm/versions/node/v8.9.4/lib/node_modules/';
+//var express = require(url + 'express');
+const express = require('express');
 const mysql = require('mysql');
 const common = require('../libs/common');
 const db = mysql.createPool({
