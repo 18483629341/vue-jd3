@@ -50,8 +50,10 @@ body {
 
 
 /*index*/
-.banner {
+.banner ,.home_n{
     position: relative;
+    max-width:720px;
+    margin:0 auto;
 }
 .banner .banner-circle {
     position: absolute;
