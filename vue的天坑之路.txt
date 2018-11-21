@@ -109,6 +109,15 @@
   routes:routes
 });
                   2.将config/index.js中的build属性设置为“/’
+                 3然后配置nignx
+	server {
+ 	   listen 0.0.0.0:12345;
+   		 location / {
+       		 root /home/我的应用跟目录;
+        		try_files $uri $uri/ /index.html =404;  // 这个是重点
+                       }
+   		 error_page 404 /index.html
+	}
 
 
       
