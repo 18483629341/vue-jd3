@@ -100,7 +100,16 @@
                 测试打包文件是否正常，开启一个服务  npm install -g serve  全局安装
                  serve dist
                 http://localhost:5000/#/home
-             
+      坑10： 发现页面的路由中带有#，如何解决
+                 #表示路由中的      hash模式
+                 如何去掉#  
+                 1.将router中的mode 设置为“history‘’
+                 const router=new VueRouter({
+  mode:"history",
+  routes:routes
+});
+                  2.将config/index.js中的build属性设置为“/’
+
 
       
     

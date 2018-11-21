@@ -12,7 +12,8 @@ import './assets/font/iconfont'
 import './assets/css/base.css'
 Vue.use(VueRouter);//
 const router=new VueRouter({
-  routes
+  mode:"hash",
+  routes:routes
 });
 Vue.use(VueLazyload,{
   perLoad:1.3,
